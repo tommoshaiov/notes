@@ -1,0 +1,23 @@
+\section*{weak convergence}
+\und{question} $a_n : \sum a_nb_n$ converges $\forall b\in\ell_2\overset{?}{\implies} a\in\ell_2$.\\
+\und{weak convergence} $x_n\wconv x$ : $\inner{x_n}{y}\to\inner{x}{y}$ for all $y$.\\
+\und{observations} i. weak limits are unique and linear. ii. $x_n\conv x\implies x_n\wconv x$. iii. $x_n\wconv x\implies x_n\conv x$ if $\dim H$ finite.\\
+\und{observation} $(u_n)^\infty$ orthonormal $\implies u_n\wconv 0$ by Bessel.\\
+\und{exercise} i. $x_n\wconv x\implies \norm{x}\le\liminf\norm{x_n}$. ii. $x_n\wconv x\and \norm{x_n}\conv\norm{x}\implies x_n\conv x$.\\
+\und{weak Cauchy} : $\inner{x_n}{y}$ converges for all $y$.\\
+\und{claim} weak Cauchy $\implies$ bounded.\\
+\und{proof} given $x_n$, let $C_n=\{y:\forall k |\inner{x_k}{y}|\le n\}$. then $C_n$ closed, $\bigcup C_n=H$. by Baire, $\ball_r{y_0}\sub C_{n_0}$ has nonempty interior. if $x_m$ is nonzero, we get $\inner{x_m}{\frac{rx_m}{2\norm{x_m}}}$ is in absolute value at most $2n_0$, hence $\norm{x_m}\le 4n_0/r$ is bounded.\qed\\
+\und{claim} $x_n$ bounded, $\inner{x_n}{z}$ converges for all $z$ in a dense subset $\implies x_n$ weak Cauchy.\\
+\und{proof} let $\norm{x_n}\le M$. fix $y,\eps$. find $\norm{y-z_0}\le \frac{\eps}{4M}$. so $\forall n,m\ge N_0$ we have $|\inner{x_n-x_m}{z_0}|\le \eps/2 \implies |\inner{x_n-x_m}{y}|\le \eps$.\qed\\
+\und{claim} weak Cauchy implies weak convergence.\\
+\und{proof} $\lim\inner{y}{x_n}$ is a well defined linear functional. it is bounded because $x_n$ is. by Riesz, $\lim\inner{y}{x_n}=\inner{y}{x}$.\qed\\
+\und{exercise} conclude a positive answer to the above question.\\
+\und{claim} $x_n\in H$ bounded $\implies \exists x_{n_k}$ weakly convergent.\\
+\und{proof} assuming $H$ separable : fix $y_n$ dense. as $\inner{y_1}{x_n}$ bounded, there is a convergent subsequence given by $x_{1,n}$. continue with $\inner{y_2}{x_{1,n}}$ etc, we have $x_{m,n}$. let $x_n'=x_{n,n}$ denote the diagonal subsequence. so $\inner{y_k}{x_n'}$ converges as its eventually a subsequence of $\inner{y_j}{x_{j,n}}$. by the above claims, $x_n'$ weakly convergent.\halfqed\\
+\und{exercise} finish the nonseparable case using $H_0=\clos(\span\{x_n\})$.\\
+\auth{Banach-Saks} $x_n\wconv x$ implies $\exists x_{n_k}\aconv x$, i.e. $\disp\frac{x_{n_1}+\dots+x_{n_k}}{k}\to x$.\\
+\und{proof} wlog $x=0$, $\norm{x_n}\le M$. as $\inner{x_n}{y}\conv0$ for all $y$, we pick $x_1'=x_1$ and inductively $x_n'$ s.t. $|\inner{x_j'}{x_n'}|\le \frac{1}{n-1}$ for $j=1,\dots,n-1$. we get $\norm{\disp\sum_{j=1}^{k} x_j'}^2\le kM^2+2(\frac{1}{1}+\frac{2}{2}+\dots+\frac{k-1}{k-1})=o(k^2)$, i.e. $x_k'\aconv 0$.\qed\\
+\und{corollary} a closed convex set is closed under weak limits.\\
+\und{exercise} $C$ closed, bounded, convex, $C\arr{f}\R$ convex, bounded from below with $x_n\to x\implies f(x)\le \liminf f(x_n)$. then $f$ assumes its minimum.\\
+\und{exercise} two linear operators $S,T$ on $H$ with $\inner{Tx}{y}=\inner{x}{Sy}$ implies $S,T$ bounded.\\
+\und{exercise} in $\ell_2$ we have $x_k\wconv x$ iff $x_n$ bounded and $x_k\pconv x$ pointwise.\\
