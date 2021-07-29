@@ -1,0 +1,6 @@
+\section*{misc}
+\auth{Schwarz} $[0,1]\arr{f}\R$ continuous, $f(x+h)+f(x-h)-2f(x)=o(h^2)$ for all $x\in(0,1)$ implies $f(x)=ax+b$ is affine.\\
+\und{proof} wlog $f(0)=f(1)=0$. let $g_\eps(t)=f(t)-\eps t(1-t)$. then $\frac{g(t+h)+g(t-h)-2g(t)}{h^2}\to 2\eps$ for $t\in(0,1)$ meaning $g_\eps$ has maximum at $0\or 1$. hence $g_\eps\le0$ for all $\eps$ and $f\le0$. similarly $f\ge0
+$.\qed\\
+\und{claim} $a_n=o(n)$ (weakly) increasing sequence of positive integers $\implies \disp\frac{n}{a_n}$ contains all positive integers.\\
+\und{proof} as $ka_n$ has the same properties, it suffices to show $a_n=n$ has a solution. at $n=1$ we have $\ge$, and at some point $<$. we cannot however have a flip from $>$ to $<$ as $a_n>n\implies a_{n+1}\ge n+1$.\qed\\
