@@ -17,10 +17,11 @@ sum_{k=0,...,n-1} (1-1/n)(1-2/n)...(1-k/n). this is monotonic in n. i think its 
 (i.e. the core is really small) by the following reasoning. replacing things after
 1-j/n by 1-j/n, we get a bound using the sum of a geometric sequence, the first
 j summands are at most j together, and then there's n-j which sum at most to n/j.
-i guess this shows E|C| = O(sqrt(n))
+i guess this shows E|C| = O(sqrt(n)) and similarly we even get Theta(sqrt(n)).
 
   i. what is the period, on average?
  ii. how soon does the period start, on average? what sort of distribution?
 iii. better bound on E|C|
  iv. how many f : forall x exists k f^k(x)=1 (i.e. core(f)={1})? answer: n^(n-2) by Cayley. what's the most probable core size? is it ~sqrt(n)?
   v. replace f in [n]^[n] with T in End(F_q^n) [e.g. |img f^k| is replaced by dim(img T^k) etc]
+ vi. n^n could be a tree with two selected points. what's the average distance? is there any relation to the other random variables? 
