@@ -1,0 +1,26 @@
+let f:[n] -> [n] be a random function.
+
+# motivation. say n=6 and f is given by [5,6,2,1,3,2] in one line notation. so we get
+# 4->1->5->3-> 2->6->2. we could have f(4)=2 or 5 instead and 4 would be above 2 or 5
+# the "core" here is the cycle (2,6) and it takes 4 steps to delete all else.
+
+the sequence f^k (composed with itself k times) is eventually periodic.
+a trivial (and awful) of n^n for the start and length of the period is available.
+the period i assume can be quite large, as is the case for permutations.
+however the starting point is at most n. indeed, consider the subsets S_k = f^k([n])
+then S_k contains S_{k+1}, and f maps S_k onto S_{k+1}. so if S_k=S_{k+1} then 
+f operates as a permutation on S_k=S_{k+1} meaning S_{k+2}=f(S_{k+1})=S_{k+1}
+and the S_k stabilize, after at most n steps, at which point the period is the
+order of the permutation f on what i call its core C = S_n = eventual S_k. clearly 
+C={x : f^k(x)=x for some k} so the expected value of |C| is given by 
+sum_{k=0,...,n-1} (1-1/n)(1-2/n)...(1-k/n). this is monotonic in n. i think its o(n)
+(i.e. the core is really small) by the following reasoning. replacing things after
+1-j/n by 1-j/n, we get a bound using the sum of a geometric sequence, the first
+j summands are at most j together, and then there's n-j which sum at most to n/j.
+
+
+  i. what is the period, on average?
+ ii. how soon does the period start, on average? what sort of distribution?
+iii. better bound on E|C|
+ iv. how many f : forall x exists k f^k(x)=1 (i.e. core(f)={1})?
+  v. replace f in [n]^[n] with T in End(F^n)
