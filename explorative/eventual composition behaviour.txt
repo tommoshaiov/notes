@@ -22,5 +22,5 @@ j summands are at most j together, and then there's n-j which sum at most to n/j
   i. what is the period, on average?
  ii. how soon does the period start, on average? what sort of distribution?
 iii. better bound on E|C|
- iv. how many f : forall x exists k f^k(x)=1 (i.e. core(f)={1})?
+ iv. how many f : forall x exists k f^k(x)=1 (i.e. core(f)={1})? answer: n^(n-2) by Cayley. what's the most probable core size?
   v. replace f in [n]^[n] with T in End(F^n)
