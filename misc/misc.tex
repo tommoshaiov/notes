@@ -1,6 +1,22 @@
 \section*{misc}
 \auth{Schwarz} $[0,1]\arr{f}\R$ continuous, $f(x+h)+f(x-h)-2f(x)=o(h^2)$ for all $x\in(0,1)$ implies $f(x)=ax+b$ is affine.\\
-\und{proof} wlog $f(0)=f(1)=0$. let $g_\eps(t)=f(t)-\eps t(1-t)$. then $\frac{g(t+h)+g(t-h)-2g(t)}{h^2}\to 2\eps$ for $t\in(0,1)$ meaning $g_\eps$ has maximum at $0\or 1$. hence $g_\eps\le0$ for all $\eps$ and $f\le0$. similarly $f\ge0
+\und{proof} wlog $f(0)=f(1)=0$. let $g_\eps(t)=f(t)-\eps t(1-t)$. then 
+$\frac{g(t+h)+g(t-h)-2g(t)}{h^2}\to 2\eps$ for $t\in(0,1)$ meaning $g_\eps$ has 
+maximum at $0\or 1$. hence $g_\eps\le0$ for all $\eps$ and $f\le0$. similarly $f\ge0
 $.\qed\\
-\und{claim} $a_n=o(n)$ (weakly) increasing sequence of positive integers $\implies \disp\frac{n}{a_n}$ contains all positive integers.\\
-\und{proof} as $ka_n$ has the same properties, it suffices to show $a_n=n$ has a solution. at $n=1$ we have $\ge$, and at some point $<$. we cannot however have a flip from $>$ to $<$ as $a_n>n\implies a_{n+1}\ge n+1$.\qed\\
+\und{claim} $a_n=o(n)$ (weakly) increasing sequence of positive integers 
+$\implies \disp\frac{n}{a_n}$ contains all positive integers.\\
+\und{proof} as $ka_n$ has the same properties, it suffices to show $a_n=n$ has a 
+solution. at $n=1$ we have $\ge$, and at some point $<$. we cannot however have a 
+flip from $>$ to $<$ as $a_n>n\implies a_{n+1}\ge n+1$.\qed\\
+\und{claim} a bounded harmonic function $g:\R^n\to\R$ is constant.\\
+\und{proof} fix two points $p,q$. then 
+$f(p)-f(q)=\disp\frac{\int_{B_R(p)\Del B_r(q)}\pm f}{\vol B_R}$, 
+but ${\vol (B_R(p)\Del B_R(q))}=o({\vol B_R})$ is negligble.\qed\\
+\und{claim} a bounded harmonic function $g:\Z^n\to\R$ is constant.\\
+\und{proof} suppose not. let $r(x)=\Del_{e_1}g(x)=g(x+e_1)-g(x)$. then 
+$r(x)+r(x+e_1)+\dots+r(x+ke_1)$ is uniformly bounded. wlog $s=\sup r(x)>0$. fix 
+$x_\eps$ with $r(x_\eps)>s-\eps$. since $r(x)\le s$ and 
+$\frac{1}{2d}\sum_{x\sim y}r(x)=r(y)$, we get $g(x_\eps+e_1)>s-2d\eps$. 
+taking $k$ big and $\eps$ small yields arbitrarily large
+$r(x_\eps)+r(x_\eps+e_1)+\dots+r(x_\eps+ke_1)>(k+1)s-\eps(1+2d+\dots+(2d)^k)$.\qed\\
