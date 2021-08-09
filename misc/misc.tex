@@ -20,3 +20,8 @@ $x_\eps$ with $r(x_\eps)>s-\eps$. since $r(x)\le s$ and
 $\frac{1}{2d}\sum_{x\sim y}r(x)=r(y)$, we get $g(x_\eps+e_1)>s-2d\eps$. 
 taking $k$ big and $\eps$ small yields arbitrarily large
 $r(x_\eps)+r(x_\eps+e_1)+\dots+r(x_\eps+ke_1)>(k+1)s-\eps(1+2d+\dots+(2d)^k)$.\qed\\
+\und{claim} assume $\Z=\disp\bigsqcup_{j\in[k]} a_j+d_j\Z$ is a nontrivial $(k\ge2)$ 
+partition of the integers into arithmetic progressions. then the differences $d_j$ are not all distinct.\\\\
+\und{proof} wlog we have $\Z_{\ge0}=\disp\bigsqcup a_j+d_j\Z_{\ge0}$. now 
+$\disp\frac{1}{1-x}=\sum x^n=\sum_j\sum_m x^{a_j+d_jm}=\sum_j \frac{x^{a_j}}{1-x^{d_j}}$. 
+since there is no pole at $e^{2\pi i/\max{d_j}}$, the maximal $d_j$ has to be the difference of at least two progressions.\qed\\\\
