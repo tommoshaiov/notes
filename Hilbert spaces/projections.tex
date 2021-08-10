@@ -1,0 +1,19 @@
+\section*{projections}
+\auth{von Neumann, Halperin} let $M_1,\dots,M_k\le H$ be closed subspaces. then $(\proj_{M_1}\dots\proj_{M_k})^n\pconv\proj_{\cap M_j}$ pointwise.\\
+\proofby{Netyanun, Solomon} write $T=\proj_{M_1}\dots\proj_{M_k}$, $M=\bigcap M_j$. we'll proceed in steps.\\
+step i : $H=M\oplus\overline{\img (I-T)}$.\\
+\und{proof} we have $M=\{\text{fixed pts of }T\}=\ker(I-T)$. indeed, $\sub$ is obvious and the other direction follows as each projection decreases 
+the length of $x$ if it isn't fixed. similarly $M=\ker (I-T^*)=\img(I-T)^\perp$ as $T^*$ is $T$ in reveresed order.\halfqed\\
+step ii : $\norm{(I-T)y}^2\le k\fit{\norm{y}^2-\norm{Ty}^2}$.\\
+\und{proof} we have $\norm{(I-T)y}\le\sum\norm{S_jy-S_{j+1}y}$ where $S_j=P_1\dots P_j$. now $\norm{S_jy-S_{j+1}y}^2=\norm{S_jy}^2-\norm{S_{j+1}y}^2$ by Pythagoras, 
+so it remains to note that $\disp\fit{\sum_{j=1}^k a_j}^2\le k\sum_{j=1}^k a_j^2$ by Cauchy-Schwarz.\halfqed\\
+step iii : $T^nx-T^{n+1}x\to 0$.\\
+\proofby{Kakutani} $\norm{T^nx}$ is decreasing and hence convergent. so we're done by letting $y=T^nx$ in step ii.\halfqed\\
+the result is trivial if $x\in M$. step iii gives the result for $x\in \img(I-T)\sub M^\perp$, which one extends to $\overline{\img(I-T)}=M^\perp$.\qed\\
+\textit{the following is a linear analog of Banach's fixed point theorem}\\
+\auth{von Neumann} let $\norm{A}\le1$ be a contraction operator on $H$ and $M=\{\text{fixed pts of }A\}$.  then $A^nx\aconv \proj_{M}(x)$.\\
+\und{lemma} $M^\perp=\overline{\img(I-A)}$.\\
+\und{proof} it suffices to show $M=\{\text{fixed pts of }A^*\}=\ker(I-A^*)$. but as $\norm{A}=\norm{A^*}\le 1$, we need to show only one inclusion. 
+for unit $x$ we have $Ax=x\implies 1=\inner{Ax}{x}=\inner{x}{A^*x}$ and $A^*x=x$ by Cauchy Schwarz.\halfqed\\
+\und{proof} the result is trivial if $x\in M$. also if $x=(A-I)y\in\img(I-A)$ then $\disp\frac{1}{n+1}\sum_{k=0}^n A^kx=\frac{A^{n+1}y-y}{n+1}\to0$. 
+one easily extends this to $x\in\overline{\img(I-A)}=M^\perp$ and is done by linearity.\qed\\
