@@ -9,6 +9,12 @@ $\implies \disp\frac{n}{a_n}$ contains all positive integers.\\
 \und{proof} as $ka_n$ has the same properties, it suffices to show $a_n=n$ has a 
 solution. at $n=1$ we have $\ge$, and at some point $<$. we cannot however have a 
 flip from $>$ to $<$ as $a_n>n\implies a_{n+1}\ge n+1$.\qed\\
+\auth{Fekete} suppose $a_n$ real with $a_{n+m}\le a_n+a_m$. then 
+$a_n/n$ converges to its infimum.\\
+\proof fixing $m$, we have $n=mq+r$ with $r<m$ and $a_{n}\le qa_m+a_r$ 
+(setting $a_0=0$) so that $a_n/n\le a_m\frac{q}{n}+a_r/n\to a_m/m$. thus 
+$\limsup a_n/n\le\inf a_m/m$.\\
+
 \und{claim} a bounded harmonic function $g:\R^n\to\R$ is constant.\\
 \und{proof} fix two points $p,q$. then 
 $f(p)-f(q)=\disp\frac{\int_{B_R(p)\Del B_r(q)}\pm f}{\vol B_R}$, 
