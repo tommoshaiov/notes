@@ -1,0 +1,23 @@
+\section*{lamp problems}
+\und{problem}\footnote{Gillis math olympiad '15} $n$ lamps in a row. initial random position. 
+evolution : a lamp will be lit at time $t+1$ iff its two neighbors shined the same at time $t$. 
+an edge lamp at time $t+1$ takes its neighbors state at time $t$.\footnote{e.g. (on,off,on,on)$\to$
+(off,on,off,on)$\to$(on,on,on,off)$\to$(on,on,off,on)...} 
+determine the $n$ for which no matter the starting states, the lamps will eventually all be lit forever.\\
+\und{solution}\footnote{this is my personal solution, there are others.} iff $n+1$ is a power of two.\\
+\und{restatement} over $F_2$, where (on,off)$=(0,1)$, the evolution is summing (xoring) the neighbors. 
+i.e. is linear and given by $A\in F_2^{n\times n}$, $A_{ij}=\delta_{|i-j|=1}$. the question reads : for which 
+$n$ is $A$ nilpotent. we call $x\in F_2^n$ s.t. $\exists k : A^kx=\vec{0}$ terminating.\\
+\und{observation} $\ker A=\{(1,0,1,0,\dots,0,1,0,1),\vec{0}\}$ if $n$ odd and $\{\vec{0}\}$ if $n$ even. 
+in particular $A$ invertible for $n$ even.\\
+\und{observation} given a length $n$ vector $\vec{x}$, the length $2n+1$ symmetric vector $(\cev{x},0,\vec{x})$
+\footnote{where $\cev{x}=(x_n,\dots,x_1)$ if $x=(x_1,\dots,x_n)$ and a vector $(t_1,\dots,t_n)$ is 
+symmetric if $t_i=t_j$ for $i+j=n+1$.} evolves to remain symmetric with $0$ as its central term, 
+with each side evolving as if it were unaffected by the other terms, just as a length $n$ vector would.\\
+\und{observation} as even $n$ fail, it suffices to show $n$ works $\iff$ $2n+1$ works.\\
+\und{$\impliedby$} fix $\vec{x}\in F_2^n$. as any vector of length $2n+1$ terminates, 
+$(\cev{x},0,\vec{x})$ terminates, meaning $x$ does.\halfqed\\
+\und{$\implies$} fix $\vec{v}\in F_2^{2n+1}$. then $\vec{v}+\cev{v}$ is symmetric with 
+$0$ as the center term. hence terminating. i.e. $A^k(\vec{v}+\cev{v})=\vec{0}$ and in other words 
+$A^k \vec{v}$ is symmetric [as $A$ and $\phantom{,}\cev{}$ commute]. hence $A^{k+1}\vec{v}$ is symmetric with 
+$0$ at its center, and so terminates.\halfqed\\
