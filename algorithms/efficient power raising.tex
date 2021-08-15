@@ -1,0 +1,10 @@
+\section*{efficient power raising}
+\textit{function description} : given a base $b$ and natural exponent $n$ it computes $b^n$.\\
+\textit{algorithm idea} : instead of $3^{15}$ requiring 14 products, one computes $3,3^2,3^4,3^8$ successively, each taking one multiplication, and then multiply them all for a total of 6 products.\\
+\texttt{algorithm $(b,n)$\\
+\tab let prod $\from$ 1, base $\from b$\\
+\tab while $n>0$\\
+\tab\tab if $n$ odd then prod $\from$ prod * base\\
+\tab\tab base $\from$ base * base, $n \from \lfloor n/2\rfloor$\\
+\tab output prod}\\
+\textit{algorithm complexity} : $O(\log n)$ multiplications.\\
